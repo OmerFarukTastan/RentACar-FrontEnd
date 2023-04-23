@@ -1,0 +1,54 @@
+<div   class="row d-flex justify-content-center">
+  <h1   appCustomColor style="text-align:center">Welcome!</h1>
+  
+  <div class="col">
+ <div class="row-md-10">
+
+
+<div *ngIf="tokenn()==false" appCustomColor >
+
+<div class=".center-screen">
+<body class="text-center">
+    <main class="form-signin w-100 m-auto">
+      <form [formGroup]="loginForm">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+  
+        <div class="form-floating">
+          <input
+            formControlName="email"
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+          />
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+          <input
+            formControlName="password"
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+          />
+          <label for="floatingPassword">Password</label>
+        </div>
+  
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me" /> Remember me
+          </label>
+        </div>
+        <button routerLink="" class="w-100 btn btn-lg btn-primary" type="submit" (click)="login()">
+          Sign in
+        </button>
+        <div>
+        <button type="button" class="w-100 btn btn-secondary" routerLink="/register" *ngIf="tokenn()==false">Register</button>  
+        </div>
+        
+        
+      </form>
+    </main>
+  </body>
+</div>
+</div>

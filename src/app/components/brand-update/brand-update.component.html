@@ -1,0 +1,25 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Update Brand</h5>
+            </div>
+            <div class="card-body">
+                <form class="form-group" [formGroup]="brand" (ngSubmit)="Update()">
+                    <!-- <input type="text" id="brandId" name="brandId"  class="form-control" formControlName="brandId">  -->
+                    <label for="categoryId">Brand Name</label>
+                    <input type="text" id="brandName" name="brandName" class="form-control" placeholder="Brand Name"
+                        formControlName="brandName" />
+                    <button type="submit" class="btn btn-info" >Update</button>
+                </form>
+            </div>
+            
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+

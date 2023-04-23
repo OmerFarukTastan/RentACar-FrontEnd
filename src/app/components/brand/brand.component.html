@@ -1,0 +1,40 @@
+<div>
+<div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  
+  <ul *ngIf="dataLoaded==true"   class="list-group">
+    <li (click)="setCurrentBrand(brand)" routerLink="/cars/brand/{{brand.brandId}}" *ngFor="let brand of brands"
+    [class]="getCurrentBrandClass(brand)">{{brand.brandName}}
+  
+    
+  </li>
+  
+    
+    
+  </ul> 
+<button  routerLink="/brand/add" type="button" class="btn btn-info">Add Brand</button>
+  
+  
+
+  <p>
+    
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#BrandUpdateCollapse" aria-expanded="false" aria-controls="BrandUpdateCollapse">
+      Brand Update
+    </button>
+  </p>
+  <div class="collapse" id="BrandUpdateCollapse">
+    <table *ngIf="dataLoaded==true" class="list-group" >
+      <thead>
+          
+      </thead>
+      <tr *ngFor="let brand of brands">
+          <td>{{brand.brandId}}</td>
+          <td>{{brand.brandName}}</td>
+          
+          <button routerLink="/brands/update/{{brand.brandId}}" type="button" class="btn btn-info">Update</button>
+      </tr>
+    </table>
+  </div>
+</div>
+  

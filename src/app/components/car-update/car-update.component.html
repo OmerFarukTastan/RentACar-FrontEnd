@@ -1,0 +1,68 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header"><h5 class="title">Update Car</h5></div>
+            <div class="card-body">
+
+
+
+
+<form class="form-group" [formGroup]="car" (ngSubmit)="UpdataData()">
+    
+    <div class="mb-3">
+        <label for="categoryId">Id</label>
+        <div class="form-group">
+            <input type="number" id="Id" name="id"  class="form-control" formControlName="id" placeholder="Id">
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="categoryId">Brand Id</label>
+        <div class="form-group">
+    <input type="number" id="brandId" name="brandId"  class="form-control" formControlName="brandId" placeholder="Brand Id">
+        </div>
+    </div>     
+
+    <div class="mb-3">
+        <label for="categoryId">Color Id</label>
+        <div class="form-group">
+    <input type="number" id="colorId" name="colorId"  class="form-control" formControlName="colorId" placeholder="Color Id">
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="categoryId">Model Year</label>
+        <div class="form-group">
+    <input type="number" id="modelYear" name="modelYear"  class="form-control" formControlName="modelYear" placeholder="Model Year">
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="categoryId">Daily Price</label>
+        <div class="form-group">
+    <input type="number" id="dailyPrice" name="dailyPrice"  class="form-control" formControlName="dailyPrice" placeholder="Daily Price">
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="categoryId">Description</label>
+        <div class="form-group">
+    <input type="text" id="description" name="description"  class="form-control" formControlName="description" placeholder="Description">
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-fill btn-primary">Update</button>
+</form>
+
+
+
+
+   
+
+
+
+
+
+
+
+

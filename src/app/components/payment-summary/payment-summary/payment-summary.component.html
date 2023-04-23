@@ -1,0 +1,10 @@
+<li *ngIf="cards.length>0" class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Your Cart</a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a *ngFor="let card of cards" class="dropdown-item">
+        <span class="badge text-bg-secondary">{{card.cvv}}</span>{{card.cardNumber}}</a>
+      </li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" routerLink="/cart">Your cards</a></li>
+    </ul>
+</li>

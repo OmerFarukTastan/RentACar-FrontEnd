@@ -1,0 +1,107 @@
+<div class="content">
+    <div  class="col-md-12">
+        <div class="card">
+            <div class="card-header"><h5 class="title">Payment</h5></div>
+            <div class="card-header"><h6 class="title">Amount to be paid:{{payCount|currency : "₺" }}</h6></div>
+            <div class="card-body">
+                <form [formGroup]="payAddForm" >
+                    <div class="mb-3">
+                        <label for="fullName">Name of the card owner</label>
+                    <div class="form-group">
+                        <input type="text" 
+                        id="fullName" 
+                        formControlName="fullName"
+                        class="form-control" placeholder="Name Lastname"/>
+                    </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="cardNumber">Card number</label>
+                    <div class="form-group">
+                        <input type="text" 
+                        id="cardNumber" 
+                        formControlName="cardNumber"
+                        class="form-control" placeholder="Card number"/>
+                    </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="cvv">CVV</label>
+                    <div class="form-group">
+                        <input type="text" 
+                        id="cvv" 
+                        formControlName="cvv"
+                        class="form-control" placeholder="CVV"/>
+                    </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="months">Month</label>
+                    <div class="form-group">
+                        <input type="number" 
+                        id="months" 
+                        formControlName="months"
+                        class="form-control" placeholder="Month"/>
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="year">Year</label>
+                    <div class="form-group">
+                        <input type="number" 
+                        id="year" 
+                        formControlName="year"
+                        class="form-control" placeholder="Year"/>
+                    </div>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="button" class="btn btn-fill btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="add()">Pay</button>
+            </div>
+        </div> 
+    </div>
+
+</div>
+
+
+
+
+<div class="card-foter">
+    
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Do you want to save card informations?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+              <button type="button" class="btn btn-primary" *ngFor="let card of cards" (click)="addTo(card)">Yes</button> 
+            </div>
+          </div>
+        </div>
+      </div>                  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

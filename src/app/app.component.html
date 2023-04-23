@@ -1,0 +1,36 @@
+<app-navi></app-navi>
+
+<div class="container" >
+
+  <div  class="row d-flex justify-content-center">
+      <div *ngIf="tokenn()==true" class="col-md-3">
+        <br>
+        <h5>Brands</h5>
+          <app-brand></app-brand>
+          <div class="column"> <br>
+            <br>
+        <h5>Colors</h5>
+            <app-color></app-color>
+            <br>
+          <app-customer></app-customer>
+          </div>
+          
+      </div >
+      <div class="col-md-8">
+        <br>
+        <router-outlet></router-outlet>
+        <div class="column"><br>
+          <router-outlet></router-outlet>
+        </div>
+      <div class="col-md-9">
+        <br>
+        <router-outlet></router-outlet>
+        
+        
+      </div>
+  </div>
+
+</div> 
+<div class="column"><br>
+          <app-rental></app-rental>
+</div>

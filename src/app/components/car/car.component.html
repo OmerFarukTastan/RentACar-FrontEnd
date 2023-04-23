@@ -1,0 +1,60 @@
+<div *ngIf="tokenn()==true">
+<ul *ngIf="dataLoaded==true" type="button" class="btn btn-primary" >
+    <li (click)="getCars()"routerLink="/cars">All Cars</li>
+</ul>
+
+
+
+ <div *ngIf="dataLoaded==false" class="spinner-border text-warning" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="mb-3">
+    <label for="filterText" class="form-label">Search</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Input a correct searching values">
+</div>
+  <div *ngIf="filterText.length>1" class="alert alert-success">
+    {{filterText}} is searched
+</div> 
+
+
+
+
+<table *ngIf="dataLoaded==true" class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>brandId</th>
+            <th>ColorId</th>
+            <th>ModelYear</th>
+            <th>DailyPrice</th>
+            <th>Description</th>
+            <th>Findex</th>
+            <th>Min findex</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tr (click)="setCurrentCar(car)" routerLink="/cars/{{car.id}}" *ngFor="let car of cars | filterPipe:filterText">   
+
+        <td>{{car.id}}</td>
+        <td>{{car.brandId}}</td>
+        <td>{{car.colorId}}</td>
+        <td>{{car.modelYear}}</td>
+        <td>{{car.dailyPrice |currency}}</td>
+        <td>{{car.description}}</td>
+        <td>{{findex}}</td>
+          <td>200</td>
+        
+        
+    </tr>
+</table>
+
+<button routerLink="car/add" type="button" class="btn btn-info">Add New Car</button>
+<button routerLink="car/update" type="button" class="btn btn-info">Update</button>
+
+</div>
+
+
